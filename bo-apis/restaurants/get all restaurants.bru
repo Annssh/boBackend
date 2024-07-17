@@ -1,0 +1,70 @@
+meta {
+  name: get all restaurants
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base}}/admin/restaurants
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwZTdkZDY2NDJjOTE5Y2U2MWJmMGQiLCJleHAiOjE3MjE4NDg3MzguMDU5LCJpYXQiOjE3MTY1NzgzMzh9.5zEmlLeGofVx2I1s57d6jQpkYh8m_se2VUElvR4LpQA
+}
+
+body:json {
+  {
+    "title":"title1",
+    "address":"abcd1",
+    
+    
+  }
+  
+   address:{
+      type:String,
+      required:[true, "Please enter restaurant address"]
+   },
+   image:{
+      type:String,
+      required:[true, "Please enter restaurant image"]
+   },
+   openTime:{
+      type:String,
+      required:[true, "Please enter open time of restaurant"]
+   },
+   closeTime:{
+      type:String,
+      required:[true, "Please enter close time of restaurant"]
+   },
+   phone:{
+      type:String,
+      required:[true, "Please enter restaurant phone number"]
+   },
+   website:{
+      type:String,
+      required:[true, "Please enter restaurant website"]
+   },
+   cuisnes:{
+      type:String,
+      required:[true, "Please enter restaurant cuisnes"]
+   },
+   description:{
+      type:String,
+      required:[true, "Please enter restaurant description"]
+   },
+  });
+}
+
+body:multipart-form {
+  title: title1
+  address: abcd1
+  openTime: 10:am
+  closeTime: 10:am
+  phone: 23424234234
+  website: sadfasfas
+  cuisnes: adfads
+  description: afasfasfajsklfrawjfjasklfdjlasfj
+  image: @file(C:\Users\agarw\Downloads\images (2).png)
+}

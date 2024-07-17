@@ -1,0 +1,19 @@
+meta {
+  name: signup
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base}}/signup
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "otp" : 144582,
+    "email":"2021it17ya@mitsgwl.ac.in",
+    "password":"2021it14ya@mitsgwl.ac.in"
+  }
+}

@@ -1,0 +1,72 @@
+meta {
+  name: update menu item
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{base}}/admin/menu/6650eb07f56753101815adcf
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwZTdkZDY2NDJjOTE5Y2U2MWJmMGQiLCJleHAiOjE3MjE4NDg3MzguMDU5LCJpYXQiOjE3MTY1NzgzMzh9.5zEmlLeGofVx2I1s57d6jQpkYh8m_se2VUElvR4LpQA
+}
+
+body:json {
+  {
+    "title":"title1",
+    "address":"abcd1",
+    
+    
+  }
+  
+   address:{
+      type:String,
+      required:[true, "Please enter restaurant address"]
+   },
+   image:{
+      type:String,
+      required:[true, "Please enter restaurant image"]
+   },
+   openTime:{
+      type:String,
+      required:[true, "Please enter open time of restaurant"]
+   },
+   closeTime:{
+      type:String,
+      required:[true, "Please enter close time of restaurant"]
+   },
+   phone:{
+      type:String,
+      required:[true, "Please enter restaurant phone number"]
+   },
+   website:{
+      type:String,
+      required:[true, "Please enter restaurant website"]
+   },
+   cuisnes:{
+      type:String,
+      required:[true, "Please enter restaurant cuisnes"]
+   },
+   description:{
+      type:String,
+      required:[true, "Please enter restaurant description"]
+   },
+  });
+}
+
+body:multipart-form {
+  title: menu2
+  ingridents: abc00
+  type: type22
+  calories: 1001
+  gram: 34334
+  duration: 1892
+  description: afasfasfajsklfrawjfjasklfdjlasfj
+  image: @file(C:\Users\agarw\Downloads\phone-img1.png)
+  restaurant: 664d073b471ab7a1a161576c
+  ingridents: abv3
+  ingridents: a6
+}

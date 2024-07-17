@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "bo-apis",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

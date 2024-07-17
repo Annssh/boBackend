@@ -1,0 +1,22 @@
+meta {
+  name: update quote
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{base}}/admin/quote/6650e8b56642c919ce61bf44
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwZTdkZDY2NDJjOTE5Y2U2MWJmMGQiLCJleHAiOjE3MjE4NDg3MzguMDU5LCJpYXQiOjE3MTY1NzgzMzh9.5zEmlLeGofVx2I1s57d6jQpkYh8m_se2VUElvR4LpQA
+}
+
+body:json {
+  {
+    "quote": "updated quote",
+     "publishing_date": "2024-05-21T14:40:00.000Z"
+  }
+}

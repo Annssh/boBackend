@@ -1,0 +1,24 @@
+meta {
+  name: create ticket
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base}}/ticket
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjUwZTdkZDY2NDJjOTE5Y2U2MWJmMGQiLCJleHAiOjE3MjE4NDg3MzguMDU5LCJpYXQiOjE3MTY1NzgzMzh9.5zEmlLeGofVx2I1s57d6jQpkYh8m_se2VUElvR4LpQA
+}
+
+body:json {
+  {
+    "title": "ticket2",
+    "ticketId":12347,
+    "status":"open",
+    "description":"aslfsafks"
+  }
+}

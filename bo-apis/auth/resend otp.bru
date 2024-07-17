@@ -1,0 +1,17 @@
+meta {
+  name: resend otp
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{base}}/resend-otp
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email":"2021it14ya@mitsgwl.ac.in"
+  }
+}
