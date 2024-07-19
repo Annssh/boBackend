@@ -53,7 +53,8 @@ const signupOtp = async (req, res) => {
       const emailData = {
         to: email,
         subject: "Signup Verification OTP",
-        text: `Your OTP for signup verification is ${otp}.`,
+        otp: otp,
+        text: `Your OTP for signup verification is `,
         html: `<p>Your OTP for signup verification is <strong>${otp}</strong>.</p>`,
       };
 

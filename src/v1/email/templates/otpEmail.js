@@ -1,14 +1,15 @@
-const React = require('react');
-const { Html, Button } = require('@react-email/components');
+const React = require("react");
+const { Html } = require("@react-email/components");
 
-function Email(props) {
-  const { url } = props;
+const Email = (props) => {
+  const { otp, text } = props;
 
   return React.createElement(
     Html,
     { lang: "en" },
-    React.createElement(Button, { href: url }, "Click me")
+    text,
+    React.createElement("strong", null, otp)
   );
-}
+};
 
 module.exports = Email;
