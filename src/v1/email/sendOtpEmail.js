@@ -1,24 +1,25 @@
-const React = require('react');
-const sendgrid = require('@sendgrid/mail');
-const otpEmailTemplate= require('./templates/otpEmail');
-const { render } = require('@react-email/render');
+const React = require("react");
+const sendgrid = require("@sendgrid/mail");
+const otpEmailTemplate = require("./templates/otpEmail");
+const { render } = require("@react-email/render");
 
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
-console.log(process.env.SENDGRID_API_KEY);
+sendgrid.setApiKey(
+  "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"
+);
 
-const sendOtpEmail = async(email)=>{
-    try {
-        const emailHtml = render(React.createElement(otpEmailTemplate,  {url: "https://www.google.com"} ));
-        const data= await sendgrid.send({
-            from: 'ritesh@flynaut-team.com',
-            to: [email],
-            subject: 'Hello World',
-            html: emailHtml,
-          });
-      console.log(data, "data");
-      } catch (error) {
-        console.error(error.response.body, "error");
-      }
-}
+const sendOtpEmail = async (emailData) => {
+  try {
+    // const emailHtml = render(React.createElement(otpEmailTemplate));
+    const data = {
+      from: "ritesh@flynaut-team.com",
+      to: emailData.to,
+      subject: emailData.subject,
+      html: emailData.html,
+    };
+    await sendgrid.send(data);
+  } catch (error) {
+    console.error(error, "error");
+  }
+};
 
 module.exports = sendOtpEmail;

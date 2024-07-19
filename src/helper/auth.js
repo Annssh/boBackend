@@ -9,8 +9,11 @@ const hashPassword = (password, salt) => {
   }
 };
 
-const authenticate = (password, salt, encryptedPassword) => {
-  return hashPassword(password, salt) === encryptedPassword;
+// const authenticate = (password, salt, encryptedPassword) => {
+//   return hashPassword(password, salt) === encryptedPassword;
+// };
+const authenticate = (password, encryptedPassword) => {
+  return hashPassword(password) === encryptedPassword;
 };
 
 module.exports = { hashPassword, authenticate };

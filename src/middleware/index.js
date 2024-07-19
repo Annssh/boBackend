@@ -1,13 +1,13 @@
 const { NOT_FOUND } = require("../utils/statuscode");
 const User = require("../v1/auth/models/userModel");
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 const isAuthenticated = async (req, res, next) => {
   const authHeader = req.headers.authorization;
   console.log(req.headers);
   console.log("checking auth");
   if (authHeader) {
-    const token = authHeader.split(' ')[1];
+    const token = authHeader.split(" ")[1];
     console.log(authHeader);
     console.log(token);
     if (!token) {
@@ -17,6 +17,7 @@ const isAuthenticated = async (req, res, next) => {
     }
     try {
       const decoded = jwt.verify(token, process.env.SECRET);
+      console.log(decoded);
       // get a user with this valid user id
       let user = await User.findById(decoded._id);
       if (!user) {
@@ -49,9 +50,8 @@ const isSameUserOrAdmin = [
       next();
     }
     next();
-  }
+  },
 ];
-
 
 const isAdmin = async (req, res, next) => {
   if (req.user.role === 3) {
